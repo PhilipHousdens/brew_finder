@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: redBrown),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'assets/images/logo.png'),
+      home: const HomePage(),
     );
   }
 }
