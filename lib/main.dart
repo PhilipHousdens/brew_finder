@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     const Color creamWhite = Color(0xffE7D7B1);
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         
