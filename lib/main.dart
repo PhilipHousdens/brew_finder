@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'BrewFinder',
       theme: ThemeData(
         
-        colorScheme: ColorScheme.fromSeed(seedColor: redBrown),
+        colorScheme: ColorScheme.fromSeed(seedColor: redBrown, secondary: creamWhite),
         useMaterial3: true,
       ),
       home: const HomePage(),
