@@ -51,7 +51,56 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            seemoreBtn()
+            seemoreBtn(),
+            Container(
+              height: size.height * 0.1 ,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    Text(
+                      'Top Rated',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Row(
+                    children: [
+                      NearbyCafe(
+                        size: size,
+                        cafeName: 'Lime Stone Café',
+                        place: 'Meung Chiang Mai, Chiang Mai',
+                        image: 'assets/images/coffeeShop.jpg',
+                      ),
+                      NearbyCafe(
+                        size: size,
+                        cafeName: 'Lime Stone Café',
+                        place: 'Meung Chiang Mai, Chiang Mai',
+                        image: 'assets/images/coffeeShop.jpg',
+                      ),
+                      NearbyCafe(
+                        size: size,
+                        cafeName: 'Lime Stone Café',
+                        place: 'Meung Chiang Mai, Chiang Mai',
+                        image: 'assets/images/coffeeShop.jpg',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            seemoreBtn(),
+            SizedBox(height: 100,)
           ],
         ),
       ),
