@@ -21,51 +21,49 @@ class HomePage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          SingleChildScrollView( // Remove this SingleChildScrollView
-            child: Column(
-              children: [
-                // Header Section
-                const Header(),
-                const NearbySection(),
-                Container(
-                  width: size.width,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: size.width,
-                            child: NearbyCafe(googlePlaceService: googlePlaceService,),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                seemoreBtn(),
-                Container(
-                  height: size.height * 0.1,
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+          Column(
+            children: [
+              // Header Section
+              const Header(),
+              const NearbySection(),
+              Container(
+                width: size.width,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Row(
                       children: [
-                        Text(
-                          'Top Rated',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        Container(
+                          width: size.width,
+                          child: NearbyCafe(googlePlaceService: googlePlaceService),
+                        )
                       ],
                     ),
                   ),
                 ),
-                seemoreBtn(),
-                SizedBox(height: 100,),
-              ],
-            ),
+              ),
+              seemoreBtn(),
+              Container(
+                height: size.height * 0.1,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Top Rated',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              seemoreBtn(),
+              SizedBox(height: 100),
+            ],
           ),
           Positioned(
             bottom: 18,
@@ -78,6 +76,7 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
 
 
 class NearbySection extends StatelessWidget {

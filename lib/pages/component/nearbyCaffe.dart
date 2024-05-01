@@ -1,7 +1,7 @@
-import 'package:brew_finder/model/google_place_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
+import 'package:brew_finder/model/google_place_service.dart'; // Import GooglePlaceService
 
 class NearbyCafe extends StatefulWidget {
   final GooglePlaceService googlePlaceService;
@@ -14,6 +14,7 @@ class NearbyCafe extends StatefulWidget {
 
 class _NearbyCafeState extends State<NearbyCafe> {
   List<PlacesSearchResult> coffeeShops = [];
+  List<Image?> coffeeShopsImages = []; // Changed to List<Image?>
 
   @override
   void initState() {
@@ -24,14 +25,16 @@ class _NearbyCafeState extends State<NearbyCafe> {
 
   void fetchNearbyCoffeeShop() async {
     print('Fetching nearby coffee shops...');
-    coffeeShops = (await widget.googlePlaceService.fetchNearbyCoffeeShops('coffee shop', const LatLng( 18.7883 ,98.9853) ));
+    coffeeShops = await widget.googlePlaceService.fetchNearbyCoffeeShops('coffee shop', const LatLng(18.7883, 98.9853));
     print('Fetched ${coffeeShops.length} coffee shops');
-    setState(() {
-      this.coffeeShops = coffeeShops;
-    });
-  }
 
-  // In nearbyCaffe.dart
+    // Retrieve images for each coffee shop
+    for (var shop in coffeeShops) {
+      coffeeShopsImages.add(await widget.googlePlaceService.getPhoto(shop));
+    }
+
+    setState(() {}); // Update the UI after fetching images
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +54,12 @@ class _NearbyCafeState extends State<NearbyCafe> {
                     height: 130,
                     width: 150,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/coffeeShop.jpg'),
+                      image: coffeeShopsImages[i] != null // Check if image is available
+                          ? DecorationImage(
+                        image: coffeeShopsImages[i]!.image, // Use image if available
                         fit: BoxFit.cover,
-                      ),
+                      )
+                          : null, // Show placeholder or loading indicator
                       borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(24),
                         topRight: Radius.circular(24),
@@ -119,4 +124,3 @@ class _NearbyCafeState extends State<NearbyCafe> {
     );
   }
 }
-
