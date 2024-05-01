@@ -1,3 +1,4 @@
+import 'package:brew_finder/model/google_place_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    GooglePlaceService googlePlaceService = GooglePlaceService();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -32,24 +34,7 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 20.0),
                       child: Row(
                         children: [
-                          NearbyCafe(
-                            size: size,
-                            cafeName: 'Lime Stone Café',
-                            place: 'Meung Chiang Mai, Chiang Mai',
-                            image: 'assets/images/coffeeShop.jpg',
-                          ),
-                          NearbyCafe(
-                            size: size,
-                            cafeName: 'Lime Stone Café',
-                            place: 'Meung Chiang Mai, Chiang Mai',
-                            image: 'assets/images/coffeeShop.jpg',
-                          ),
-                          NearbyCafe(
-                            size: size,
-                            cafeName: 'Lime Stone Café',
-                            place: 'Meung Chiang Mai, Chiang Mai',
-                            image: 'assets/images/coffeeShop.jpg',
-                          ),
+                          NearbyCafe(googlePlaceService: googlePlaceService,)
                         ],
                       ),
                     ),
@@ -70,36 +55,6 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                ),
-                Container(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: Row(
-                        children: [
-                          NearbyCafe(
-                            size: size,
-                            cafeName: 'Lime Stone Café',
-                            place: 'Meung Chiang Mai, Chiang Mai',
-                            image: 'assets/images/coffeeShop.jpg',
-                          ),
-                          NearbyCafe(
-                            size: size,
-                            cafeName: 'Lime Stone Café',
-                            place: 'Meung Chiang Mai, Chiang Mai',
-                            image: 'assets/images/coffeeShop.jpg',
-                          ),
-                          NearbyCafe(
-                            size: size,
-                            cafeName: 'Lime Stone Café',
-                            place: 'Meung Chiang Mai, Chiang Mai',
-                            image: 'assets/images/coffeeShop.jpg',
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                 ),
