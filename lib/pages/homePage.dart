@@ -21,20 +21,24 @@ class HomePage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          SingleChildScrollView(
+          SingleChildScrollView( // Remove this SingleChildScrollView
             child: Column(
               children: [
                 // Header Section
                 const Header(),
                 const NearbySection(),
                 Container(
+                  width: size.width,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Row(
                         children: [
-                          NearbyCafe(googlePlaceService: googlePlaceService,)
+                          Container(
+                            width: size.width,
+                            child: NearbyCafe(googlePlaceService: googlePlaceService,),
+                          )
                         ],
                       ),
                     ),
