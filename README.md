@@ -1,5 +1,7 @@
 # Café Finder App
-
+<p align="center">
+  <img src="assets/images/Home_Page.png" alt="Coffee Shop">
+</p>
 ## Description
 The Café Finder App is designed to help users discover top-rated coffee shops near them. Users can easily browse through a curated list of coffee shops, view photos, check reviews, and even explore the café's social media presence on platforms like TikTok or Instagram. Additionally, users can bookmark their favorite cafés and keep track of the ones they've visited.
 
