@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../controller/APIProvider.dart'; // Import GooglePlaceService
 
-class NearbyCafe extends StatelessWidget {
-  const NearbyCafe({super.key});
+class topRated extends StatelessWidget {
+  const topRated ({super.key});
 
   @override
   Widget build(BuildContext context) {
     final coffeeShopProvider = Provider.of<CoffeeShopProvider>(context);
+
     final coffeeShops = coffeeShopProvider.coffeeShops;
     final coffeeShopImages = coffeeShopProvider.coffeeShopImages; // Access images
 
     if (coffeeShops == null || coffeeShops.isEmpty) {
       return Text('No coffee shops found');
+    } else {
+      coffeeShops.sort((a,b) => (b.rating ?? 0).compareTo(a.rating ?? 0));
     }
+
     final Size size = MediaQuery.of(context).size;
 
     return Container(
