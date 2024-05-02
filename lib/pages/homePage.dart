@@ -40,9 +40,11 @@ class _HomePageState extends State<HomePage> {
         width: size.width,
           height: size.height,
           color: Colors.white,
-          child: CircularProgressIndicator(
-            strokeWidth: 4.0,
-            color: Theme.of(context).colorScheme.primary,
+          child: Center(
+            child: CircularProgressIndicator(
+              strokeWidth: 4.0,
+              color: Theme.of(context).colorScheme.primary,
+            ),
           )
       ); // Show loading indicator while fetching data
     }
