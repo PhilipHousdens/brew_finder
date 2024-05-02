@@ -1,3 +1,4 @@
+import 'package:brew_finder/pages/seeMore-Page.dart';
 import 'package:flutter/material.dart';
 
 class seemoreBtn extends StatelessWidget {
@@ -10,7 +11,7 @@ class seemoreBtn extends StatelessWidget {
     return Container(
       child: GestureDetector(
         onTap: () {
-          // Handle 'see more' button press
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SeeMore()));
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
