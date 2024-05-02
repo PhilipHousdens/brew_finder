@@ -50,21 +50,54 @@ class _NearbyCafeState extends State<NearbyCafe> {
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Column(
                 children: [
-                  Container(
-                    height: 130,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      image: coffeeShopsImages[i] != null // Check if image is available
-                          ? DecorationImage(
-                        image: coffeeShopsImages[i]!.image, // Use image if available
-                        fit: BoxFit.cover,
-                      )
-                          : null, // Show placeholder or loading indicator
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(24),
-                        topRight: Radius.circular(24),
+                  Stack( // Use Stack to overlay the image and rating
+                    children: [
+                      Container(
+                        height: 130,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          image: coffeeShopsImages[i] != null // Check if image is available
+                              ? DecorationImage(
+                            image: coffeeShopsImages[i]!.image, // Use image if available
+                            fit: BoxFit.cover,
+                          )
+                              : null, // Show placeholder or loading indicator
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(24),
+                            topRight: Radius.circular(24),
+                          ),
+                        ),
                       ),
-                    ),
+                      if (coffeeShops[i].rating != null) // Display rating if available
+                        Positioned(
+                          top: 8,
+                          right: 8,
+                          child: Container(
+                            padding: const EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.orange,
+                                  size: 16,
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  coffeeShops[i].rating.toString(),
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
                   Container(
                     width: 150,
