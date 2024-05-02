@@ -1,24 +1,34 @@
-# brew_finder
+# Café Finder App
+<p align="center">
+  <img src="assets/images/Home_Page.png" alt="Coffee Shop">
+</p>
+## Description
+The Café Finder App is designed to help users discover top-rated coffee shops near them. Users can easily browse through a curated list of coffee shops, view photos, check reviews, and even explore the café's social media presence on platforms like TikTok or Instagram. Additionally, users can bookmark their favorite cafés and keep track of the ones they've visited.
 
-A new Flutter project.
+## Features
+- Find top-rated coffee shops nearby
+- View café photos and reviews
+- Explore café social media presence
+- Bookmark favorite cafés
+- Keep track of visited cafés
+- Share visited cafés on other social media platforms
 
-## Getting Started
+## How It Benefits Users
+The Café Finder App offers several benefits to users:
+1. Conveniently find nearby cafés: Users can quickly locate top-rated coffee shops in their vicinity.
+2. Make informed decisions: By viewing photos, reviews, and social media content, users can make informed decisions about which café to visit.
+3. Personalized experience: Users can bookmark their favorite cafés and keep track of the ones they've visited, creating a personalized list of recommendations.
+4. Share experiences: Users can easily share their café visits on other social media platforms, allowing them to showcase their experiences and recommend cafés to friends and followers.
 
-This project is a starting point for a Flutter application.
+## Why Users Would Use This Application
+Users would use the Café Finder App for various reasons:
+- When craving coffee or looking for a place to hang out, users can rely on the app to find top-rated cafés nearby.
+- The ability to view café photos, reviews, and social media content helps users choose cafés that align with their preferences and interests.
+- Bookmarking favorite cafés and keeping track of visited ones offers a convenient way to plan future visits and reminisce about past experiences.
+- Sharing café visits on social media allows users to showcase their adventures and recommend cafés to their network.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
+The Café Finder App is built using the following technologies:
+- Frontend: Flutter
+- APIs: Google Maps API
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-### How would this benefit the users? 
-The users will be able to find the café that’s near them with a price range of the drinks.
-This will help users to choose the café they're interested in. Users can also check out each café social media page, or tags 
-In the social media, such as TikTok of Instagram. 
-
-### Why would users use this application?
-Sometime when we want a coffee, drinks or just a place to go when there is nowhere to really go to. You can use this application to find the best café of your choices with a reference from a multiple platform for you to check out, then choose the one that you like to visit then the app will provide users a location of the chosen café. After you have visited your desired café, it will automatically put that café into your visited café that you can chose to post it in yours other social media platforms.![image](https://github.com/PhilipHousdens/brew_finder/assets/94585775/07a917a9-9a9f-4a5d-bacd-8ec0726ac3d0)
